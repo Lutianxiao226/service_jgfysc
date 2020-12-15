@@ -6,7 +6,13 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7a9d56e-33fd-4615-a2b4-f30562777306" name="Default Changelist" comment="" />
+    <list default="true" id="e7a9d56e-33fd-4615-a2b4-f30562777306" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/service_jgfysc.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/neusoft/hz/model/Js01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,10 +38,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -47,9 +56,9 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="localRepository" value="E:\GYBYPtreeApp\apache-maven-3.5.3-bin\repository" />
-        <option name="mavenHome" value="$PROJECT_DIR$/../../../GYBYPtreeApp/apache-maven-3.5.3-bin/apache-maven-3.5.3" />
-        <option name="userSettingsFile" value="E:\GYBYPtreeApp\apache-maven-3.5.3-bin\apache-maven-3.5.3\conf\settings.xml" />
+        <option name="localRepository" value="F:\maven-repository" />
+        <option name="mavenHome" value="F:/mavenHome/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="F:\mavenHome\apache-maven-3.6.3\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
     <option name="importingSettings">
@@ -255,6 +264,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1604279782485" />
@@ -387,6 +397,28 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration>C:\Users\Administrator\AppData\Roaming\Subversion</configuration>
   </component>
@@ -426,6 +458,7 @@
       <workItem from="1606876133444" duration="1643000" />
       <workItem from="1606962676106" duration="2201000" />
       <workItem from="1607142431576" duration="3253000" />
+      <workItem from="1607999110255" duration="814000" />
     </task>
     <servers />
   </component>
@@ -440,17 +473,59 @@
     </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1606876150130">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="806" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1607999114272">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="806" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607999114272" />
+    <state x="988" y="270" key="FileChooserDialogImpl" timestamp="1607999141426">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1606876150130" />
-    <state x="270" y="56" key="SettingsEditor" timestamp="1606876180827">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="988" y="270" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1607999141426" />
+    <state width="1293" height="188" key="GridCell.Tab.0.bottom" timestamp="1607999372453">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1293" height="188" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607999372453" />
+    <state width="1293" height="188" key="GridCell.Tab.0.center" timestamp="1607999372453">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1293" height="188" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607999372453" />
+    <state width="1293" height="188" key="GridCell.Tab.0.left" timestamp="1607999372452">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1293" height="188" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607999372452" />
+    <state width="1293" height="188" key="GridCell.Tab.0.right" timestamp="1607999372453">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1293" height="188" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607999372453" />
+    <state width="1293" height="188" key="GridCell.Tab.1.bottom" timestamp="1607999372453">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1293" height="188" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607999372453" />
+    <state width="1293" height="188" key="GridCell.Tab.1.center" timestamp="1607999372453">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1293" height="188" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607999372453" />
+    <state width="1293" height="188" key="GridCell.Tab.1.left" timestamp="1607999372453">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1293" height="188" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607999372453" />
+    <state width="1293" height="188" key="GridCell.Tab.1.right" timestamp="1607999372453">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1293" height="188" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607999372453" />
+    <state x="338" y="71" key="SettingsEditor" timestamp="1607999142920">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="270" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1606876180827" />
+    <state x="338" y="71" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1607999142920" />
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1607999110004">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607999110004" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
