@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Data
-@Table(name = "COM_EXTERNAL_INVOKE_LOG_PSYCHOSIS")
+@Table(name = "COM_EXTERNAL_INVOKE_LOG_PS")
 @NameStyle(Style.uppercase)
 public class ComExternalInvokeLogPsychosis {
 
@@ -57,4 +57,12 @@ public class ComExternalInvokeLogPsychosis {
     // SERVICECODE服务编码
     @Column( name = "SERVICECODE")
     private String SERVICECODE;
+
+    // 解密前数据
+    @Column( name = "BEFORE_DECRYPTION")
+    private String BEFORE_DECRYPTION;
+
+    // 解密前数据
+    @Column( name = "AFTER_DECRYPTION")
+    private String AFTER_DECRYPTION;
 }
