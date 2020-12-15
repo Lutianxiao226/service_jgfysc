@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+	<context:component-scan
+		base-package="com.neusoft.hz" />
+
+	<bean id="sqlSessionFactory"
+		  class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="platformDataSource" />
+		<property name="typeAliasesPackage"
+				  value="com.neusoft.hz.model" />
+	</bean>
+
+	<bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage"
+				  value="com.neusoft.hz.mapper" />
+	</bean>
+	<bean id="sqlSession"
+		  class="org.mybatis.spring.SqlSessionTemplate" scope="prototype">
+		<constructor-arg index="0" ref="sqlSessionFactory" />
+	</bean>
+
+	<!-- 定时任务配置开始 -->
+	<bean id="QuarJob" class="com.neusoft.hz.service.QuarFirstJob" >
+
+	</bean>
+	<bean id="jobDetail"
+		  class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="group" value="quartzGroup1" />
+		<property name="name" value="quartzJob1" />
+		<!--false表示等上一个任务执行完后再开启新的任务 -->
+		<property name="concurrent" value="false" />
+		<property name="targetObject">
+			<ref bean="QuarJob" />
+		</property>
+
+		<property name="targetMethod">
+			<value>startJob</value>
+		</property>
+	</bean>
+	<!-- 调度触发器 -->
+	<bean id="myTrigger"
+		  class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="name" value="trigger1" />
+		<property name="group" value="group1" />
+		<property name="jobDetail">
+			<ref bean="jobDetail" />
+		</property>
+		<property name="cronExpression">
+			<value>${job.monitor.cron}</value>
+		</property>
+	</bean>
+
+	<!-- 调度工厂 -->
+	<bean id="scheduler"
+		  class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+
+			<list>
+				<ref bean="myTrigger" />
+			</list>
+		</property>
+	</bean>
+	<!-- 定时任务配置结束 -->
+
+
+	<!-- 事务管理 -->
+	<bean id="transactionManager"
+		  class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="platformDataSource" />
+	</bean>
+
+	<!-- 配置数据源 -->
+	<bean id="config"
+		  class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:db-platform.properties</value>
+				<value>classpath:config.properties</value>
+			</list>
+		</property>
+	</bean>
+	<!-- dataSource -->
+	<bean id="platformDataSource"
+		  class="com.alibaba.druid.pool.DruidDataSource" init-method="init"
+		  destroy-method="close">
+		<!-- 数据库基本信息配置 -->
+		<property name="driverClassName"
+				  value="${platform_driverClassName}" />
+		<property name="url" value="${platform_url}" />
+		<property name="username" value="${platform_username}" />
+		<property name="password" value="${platform_password}" />
+		<!-- 初始化连接数量 -->
+		<property name="initialSize" value="${platform_initialSize}" />
+		<!-- 最大并发连接数 -->
+		<property name="maxActive" value="${platform_maxActive}" />
+		<!-- 最小空闲连接数 -->
+		<property name="minIdle" value="${platform_minIdle}" />
+		<!-- 配置获取连接等待超时的时间 -->
+		<property name="maxWait" value="${platform_maxWait}" />
+		<!-- 超过时间限制是否回收 -->
+		<property name="removeAbandoned"
+				  value="${platform_removeAbandoned}" />
+		<!-- 超过时间限制多长； -->
+		<property name="removeAbandonedTimeout"
+				  value="${platform_removeAbandonedTimeout}" />
+		<!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+		<property name="timeBetweenEvictionRunsMillis"
+				  value="${platform_timeBetweenEvictionRunsMillis}" />
+		<!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+		<property name="minEvictableIdleTimeMillis"
+				  value="${platform_minEvictableIdleTimeMillis}" />
+		<!-- 用来检测连接是否有效的sql，要求是一个查询语句 -->
+		<property name="validationQuery"
+				  value="${platform_validationQuery}" />
+		<!-- 申请连接的时候检测 -->
+		<property name="testWhileIdle"
+				  value="${platform_testWhileIdle}" />
+		<!-- 申请连接时执行validationQuery检测连接是否有效，配置为true会降低性能 -->
+		<property name="testOnBorrow"
+				  value="${platform_testOnBorrow}" />
+		<!-- 归还连接时执行validationQuery检测连接是否有效，配置为true会降低性能 -->
+		<property name="testOnReturn"
+				  value="${platform_testOnReturn}" />
+		<!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+		<property name="poolPreparedStatements"
+				  value="${platform_poolPreparedStatements}" />
+		<property name="maxPoolPreparedStatementPerConnectionSize"
+				  value="${platform_maxPoolPreparedStatementPerConnectionSize}" />
+		<!--属性类型是字符串，通过别名的方式配置扩展插件，常用的插件有： 监控统计用的filter:stat 日志用的filter:log4j 防御SQL注入的filter:wall -->
+		<property name="filters" value="${platform_filters}" />
+	</bean>
+
+</beans>
